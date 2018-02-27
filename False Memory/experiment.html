@@ -5,7 +5,7 @@
         <script src="jspsych-6.0.1/jspsych.js"></script>
         <script src="jspsych-6.0.1/plugins/jspsych-html-keyboard-response.js"></script>
         <script src="jspsych-6.0.1/plugins/jspsych-text-display.js"></script>
-        <script src="jspsych-6.0.1/plugins/jspsych-survey-likert.js"></script>
+        <script src="jspsych-6.0.1/plugins/jspsych-survey-multi-select.js"></script>
         <link href="jspsych-6.0.1/css/jspsych.css" rel="stylesheet" type="text/css"></link>
     </head>
     <body></body>
@@ -32,6 +32,9 @@
     };
     timeline.push(instructions);
 
+//-----------------------------FIRST LIST---------------------------------------
+// critical word - anger
+
     //fixation cross
     var fixation = {
       type: 'html-keyboard-response',
@@ -42,7 +45,6 @@
     };
     timeline.push(fixation);
 
-    //first list
     var first_trial_stimuli = [
       {stimulus: '<div style="font-size:150px;">mad</div>'},
       {stimulus: '<div style="font-size:150px;">fear</div>'},
@@ -69,32 +71,408 @@
       post_trial_gap: 1500
     };
 
-    //so can do something like
     var trial_one_procedure = {
       timeline: [first_trial],
       timeline_variables: first_trial_stimuli
     };
     timeline.push(trial_one_procedure);
 
-    // possible answers.
-    var answers = ["Yes", "No"];
+// -------------------- SECOND LIST -------------------------------------------
+// critical word - window
+
+    //fixation cross
+    var fixation = {
+      type: 'html-keyboard-response',
+      stimulus: '<div style="font-size:100px;">+</div>',
+      choices: jsPsych.NO_KEYS,
+      trial_duration: 1000,
+      post_trial_gap:500
+    };
+    timeline.push(fixation);
+
+    var second_trial_stimuli = [
+      {stimulus: '<div style="font-size:150px;">door</div>'},
+      {stimulus: '<div style="font-size:150px;">glass</div>'},
+      {stimulus: '<div style="font-size:150px;">pane</div>'},
+      {stimulus: '<div style="font-size:150px;">shade</div>'},
+      {stimulus: '<div style="font-size:150px;">ledge</div>'},
+      {stimulus: '<div style="font-size:150px;">sill</div>'},
+      {stimulus: '<div style="font-size:150px;">house</div>'},
+      {stimulus: '<div style="font-size:150px;">open</div>'},
+      {stimulus: '<div style="font-size:150px;">curtain</div>'},
+      {stimulus: '<div style="font-size:150px;">frame</div>'},
+      {stimulus: '<div style="font-size:150px;">view</div>'},
+      {stimulus: '<div style="font-size:150px;">breeze</div>'},
+      {stimulus: '<div style="font-size:150px;">sash</div>'},
+      {stimulus: '<div style="font-size:150px;">screen</div>'},
+      {stimulus: '<div style="font-size:150px;">shutter</div>'}
+    ]
+
+    var second_trial = {
+      type: 'html-keyboard-response',
+      stimulus: jsPsych.timelineVariable('stimulus'),
+      choices: jsPsych.NO_KEYS,
+      trial_duration: 1500,
+      post_trial_gap: 1500
+    };
+
+    var trial_two_procedure = {
+      timeline: [second_trial],
+      timeline_variables: second_trial_stimuli
+    };
+    timeline.push(trial_two_procedure);
+
+//----------------------------THIRD LIST----------------------------------------
+// critical word - sleep
+
+    //fixation cross
+    var fixation = {
+      type: 'html-keyboard-response',
+      stimulus: '<div style="font-size:100px;">+</div>',
+      choices: jsPsych.NO_KEYS,
+      trial_duration: 1000,
+      post_trial_gap:500
+    };
+    timeline.push(fixation);
+
+    var third_trial_stimuli = [
+      {stimulus: '<div style="font-size:150px;">bed</div>'},
+      {stimulus: '<div style="font-size:150px;">rest</div>'},
+      {stimulus: '<div style="font-size:150px;">awake</div>'},
+      {stimulus: '<div style="font-size:150px;">tired</div>'},
+      {stimulus: '<div style="font-size:150px;">dream</div>'},
+      {stimulus: '<div style="font-size:150px;">wake</div>'},
+      {stimulus: '<div style="font-size:150px;">snooze</div>'},
+      {stimulus: '<div style="font-size:150px;">blanket</div>'},
+      {stimulus: '<div style="font-size:150px;">doze</div>'},
+      {stimulus: '<div style="font-size:150px;">slumber</div>'},
+      {stimulus: '<div style="font-size:150px;">snore</div>'},
+      {stimulus: '<div style="font-size:150px;">nap</div>'},
+      {stimulus: '<div style="font-size:150px;">peace</div>'},
+      {stimulus: '<div style="font-size:150px;">yawn</div>'},
+      {stimulus: '<div style="font-size:150px;">drowsy</div>'}
+    ]
+
+    var third_trial = {
+      type: 'html-keyboard-response',
+      stimulus: jsPsych.timelineVariable('stimulus'),
+      choices: jsPsych.NO_KEYS,
+      trial_duration: 1500,
+      post_trial_gap: 1500
+    };
+
+    var trial_three_procedure = {
+      timeline: [third_trial],
+      timeline_variables: third_trial_stimuli
+    };
+    timeline.push(trial_three_procedure);
+
+//-----------------------FOURTH LIST--------------------------------------------
+// critical word - smell
+
+    //fixation cross
+    var fixation = {
+      type: 'html-keyboard-response',
+      stimulus: '<div style="font-size:100px;">+</div>',
+      choices: jsPsych.NO_KEYS,
+      trial_duration: 1000,
+      post_trial_gap:500
+    };
+    timeline.push(fixation);
+
+    var fourth_trial_stimuli = [
+      {stimulus: '<div style="font-size:150px;">nose</div>'},
+      {stimulus: '<div style="font-size:150px;">breathe</div>'},
+      {stimulus: '<div style="font-size:150px;">sniff</div>'},
+      {stimulus: '<div style="font-size:150px;">aroma</div>'},
+      {stimulus: '<div style="font-size:150px;">hear</div>'},
+      {stimulus: '<div style="font-size:150px;">see</div>'},
+      {stimulus: '<div style="font-size:150px;">nostril</div>'},
+      {stimulus: '<div style="font-size:150px;">whiff</div>'},
+      {stimulus: '<div style="font-size:150px;">scent</div>'},
+      {stimulus: '<div style="font-size:150px;">reek</div>'},
+      {stimulus: '<div style="font-size:150px;">stench</div>'},
+      {stimulus: '<div style="font-size:150px;">fragrance</div>'},
+      {stimulus: '<div style="font-size:150px;">perfume</div>'},
+      {stimulus: '<div style="font-size:150px;">salta</div>'},
+      {stimulus: '<div style="font-size:150px;">rose</div>'}
+    ]
+
+    var fourth_trial = {
+      type: 'html-keyboard-response',
+      stimulus: jsPsych.timelineVariable('stimulus'),
+      choices: jsPsych.NO_KEYS,
+      trial_duration: 1500,
+      post_trial_gap: 1500
+    };
+
+    var trial_four_procedure = {
+      timeline: [fourth_trial],
+      timeline_variables: fourth_trial_stimuli
+    };
+    timeline.push(trial_four_procedure);
+
+//------------------------------FIFTH LIST--------------------------------------
+// critical word - doctor
+
+    //fixation cross
+    var fixation = {
+      type: 'html-keyboard-response',
+      stimulus: '<div style="font-size:100px;">+</div>',
+      choices: jsPsych.NO_KEYS,
+      trial_duration: 1000,
+      post_trial_gap:500
+    };
+    timeline.push(fixation);
+
+    var fifth_trial_stimuli = [
+      {stimulus: '<div style="font-size:150px;">nurse</div>'},
+      {stimulus: '<div style="font-size:150px;">sick</div>'},
+      {stimulus: '<div style="font-size:150px;">lawyer</div>'},
+      {stimulus: '<div style="font-size:150px;">medicine</div>'},
+      {stimulus: '<div style="font-size:150px;">health</div>'},
+      {stimulus: '<div style="font-size:150px;">hospital</div>'},
+      {stimulus: '<div style="font-size:150px;">dentist</div>'},
+      {stimulus: '<div style="font-size:150px;">physician</div>'},
+      {stimulus: '<div style="font-size:150px;">ill</div>'},
+      {stimulus: '<div style="font-size:150px;">patient</div>'},
+      {stimulus: '<div style="font-size:150px;">office</div>'},
+      {stimulus: '<div style="font-size:150px;">stethoscope</div>'},
+      {stimulus: '<div style="font-size:150px;">surgeon</div>'},
+      {stimulus: '<div style="font-size:150px;">clinic</div>'},
+      {stimulus: '<div style="font-size:150px;">cure</div>'}
+    ]
+
+    var fifth_trial = {
+      type: 'html-keyboard-response',
+      stimulus: jsPsych.timelineVariable('stimulus'),
+      choices: jsPsych.NO_KEYS,
+      trial_duration: 1500,
+      post_trial_gap: 1500
+    };
+
+    var trial_five_procedure = {
+      timeline: [fifth_trial],
+      timeline_variables: fifth_trial_stimuli
+    };
+    timeline.push(trial_five_procedure);
+
+//------------------------SIXTH LIST--------------------------------------------
+//critical word - sweet
+
+    //fixation cross
+    var fixation = {
+      type: 'html-keyboard-response',
+      stimulus: '<div style="font-size:100px;">+</div>',
+      choices: jsPsych.NO_KEYS,
+      trial_duration: 1000,
+      post_trial_gap:500
+    };
+    timeline.push(fixation);
+
+    var sixth_trial_stimuli = [
+      {stimulus: '<div style="font-size:150px;">sour</div>'},
+      {stimulus: '<div style="font-size:150px;">candy</div>'},
+      {stimulus: '<div style="font-size:150px;">sugar</div>'},
+      {stimulus: '<div style="font-size:150px;">bitter</div>'},
+      {stimulus: '<div style="font-size:150px;">good</div>'},
+      {stimulus: '<div style="font-size:150px;">taste</div>'},
+      {stimulus: '<div style="font-size:150px;">tooth</div>'},
+      {stimulus: '<div style="font-size:150px;">nice</div>'},
+      {stimulus: '<div style="font-size:150px;">honey</div>'},
+      {stimulus: '<div style="font-size:150px;">soda</div>'},
+      {stimulus: '<div style="font-size:150px;">chocolate</div>'},
+      {stimulus: '<div style="font-size:150px;">heart</div>'},
+      {stimulus: '<div style="font-size:150px;">cake</div>'},
+      {stimulus: '<div style="font-size:150px;">tart</div>'},
+      {stimulus: '<div style="font-size:150px;">pie</div>'}
+    ]
+
+    var sixth_trial = {
+      type: 'html-keyboard-response',
+      stimulus: jsPsych.timelineVariable('stimulus'),
+      choices: jsPsych.NO_KEYS,
+      trial_duration: 1500,
+      post_trial_gap: 1500
+    };
+
+    var trial_six_procedure = {
+      timeline: [sixth_trial],
+      timeline_variables: sixth_trial_stimuli
+    };
+    timeline.push(trial_six_procedure);
+
+//-----------------------SEVENTH LIST-------------------------------------------
+//critical word - chair
+
+    //fixation cross
+    var fixation = {
+      type: 'html-keyboard-response',
+      stimulus: '<div style="font-size:100px;">+</div>',
+      choices: jsPsych.NO_KEYS,
+      trial_duration: 1000,
+      post_trial_gap:500
+    };
+    timeline.push(fixation);
+
+    var seventh_trial_stimuli = [
+      {stimulus: '<div style="font-size:150px;">table</div>'},
+      {stimulus: '<div style="font-size:150px;">sit</div>'},
+      {stimulus: '<div style="font-size:150px;">legs</div>'},
+      {stimulus: '<div style="font-size:150px;">seat</div>'},
+      {stimulus: '<div style="font-size:150px;">couch</div>'},
+      {stimulus: '<div style="font-size:150px;">desk</div>'},
+      {stimulus: '<div style="font-size:150px;">recliner</div>'},
+      {stimulus: '<div style="font-size:150px;">sofa</div>'},
+      {stimulus: '<div style="font-size:150px;">wood</div>'},
+      {stimulus: '<div style="font-size:150px;">cushion</div>'},
+      {stimulus: '<div style="font-size:150px;">swivel</div>'},
+      {stimulus: '<div style="font-size:150px;">stool</div>'},
+      {stimulus: '<div style="font-size:150px;">sitting</div>'},
+      {stimulus: '<div style="font-size:150px;">rocking</div>'},
+      {stimulus: '<div style="font-size:150px;">bench</div>'}
+    ]
+
+    var seventh_trial = {
+      type: 'html-keyboard-response',
+      stimulus: jsPsych.timelineVariable('stimulus'),
+      choices: jsPsych.NO_KEYS,
+      trial_duration: 1500,
+      post_trial_gap: 1500
+    };
+
+    var trial_seven_procedure = {
+      timeline: [seventh_trial],
+      timeline_variables: seventh_trial_stimuli
+    };
+    timeline.push(trial_seven_procedure);
+
+//-----------------------------EIGHTH LIST-------------------------------------
+//critical word - smoke
+
+    //fixation cross
+    var fixation = {
+      type: 'html-keyboard-response',
+      stimulus: '<div style="font-size:100px;">+</div>',
+      choices: jsPsych.NO_KEYS,
+      trial_duration: 1000,
+      post_trial_gap:500
+    };
+    timeline.push(fixation);
+
+    var eighth_trial_stimuli = [
+      {stimulus: '<div style="font-size:150px;">cigarette</div>'},
+      {stimulus: '<div style="font-size:150px;">puff</div>'},
+      {stimulus: '<div style="font-size:150px;">blaze</div>'},
+      {stimulus: '<div style="font-size:150px;">billows</div>'},
+      {stimulus: '<div style="font-size:150px;">pollution</div>'},
+      {stimulus: '<div style="font-size:150px;">ashes</div>'},
+      {stimulus: '<div style="font-size:150px;">cigar</div>'},
+      {stimulus: '<div style="font-size:150px;">chimney</div>'},
+      {stimulus: '<div style="font-size:150px;">fire</div>'},
+      {stimulus: '<div style="font-size:150px;">tobacco</div>'},
+      {stimulus: '<div style="font-size:150px;">stink</div>'},
+      {stimulus: '<div style="font-size:150px;">pipe</div>'},
+      {stimulus: '<div style="font-size:150px;">lungs</div>'},
+      {stimulus: '<div style="font-size:150px;">flames</div>'},
+      {stimulus: '<div style="font-size:150px;">stain</div>'}
+    ]
+
+    var eighth_trial = {
+      type: 'html-keyboard-response',
+      stimulus: jsPsych.timelineVariable('stimulus'),
+      choices: jsPsych.NO_KEYS,
+      trial_duration: 1500,
+      post_trial_gap: 1500
+    };
+
+    var trial_eight_procedure = {
+      timeline: [eighth_trial],
+      timeline_variables: eighth_trial_stimuli
+    };
+    timeline.push(trial_eight_procedure);
+
+//-----------------------------TESTING BLOCK------------------------------------
+
+    // possible answers
+    var answers = ["Old", "New", "Remember", "Know"];
 
 //7 items per block
 /*
-(2 studied words, 2 related words,
-2 unrelated words, and the critical nonstudied lure)
+(3 studied words, 2 unrelated words, and the critical nonstudied lure)
 */
+
+// 8 lists 48 items in test
+//24 studied 24 unstudied
+//3 from each list and 2 tandom words + lure
+//3 ALWAYS taken from 1, 8 and 10
+//for word associations i used
+//"norms for word lists that create false memories"
+//http://www.psych.wustl.edu/memory/Roddy%20article%20PDF's/Stadler%20et%20al%20(1999)_MemCog.pdf
+
+//can just make this one huge page of randomized list at the end
+//i could do all this in one day definitely
+
     var test_page = {
-      type: 'survey-likert',
-      preamble: 'Was the word in any of the studied lists?',
+      type: 'survey-multi-select',
+      preamble: 'Was the word in any of the studied lists? If yes, do you remember or know so?',
       questions: [
-        {prompt: "mad", labels: answers},
-        {prompt: "mail", labels: answers},
-        {prompt: "revenge", labels: answers},
-        {prompt: "field", labels: answers},
-        {prompt: "hate", labels: answers},
-        {prompt: "violence", labels: answers},
-        {prompt: "anger", labels: answers}
+        //for list "mad"
+        {prompt: "mad", options: answers, horizontal: true},
+        {prompt: "mail", options: answers, horizontal: true},
+        {prompt: "wrath", options: answers, horizontal: true},
+        {prompt: "field", options: answers, horizontal: true},
+        {prompt: "fight", options: answers, horizontal: true},
+        {prompt: "anger", options: answers, horizontal: true},
+        //for list "window"
+        {prompt: "window", options: answers, horizontal: true},
+        {prompt: "door", options: answers, horizontal: true},
+        {prompt: "open", options: answers, horizontal: true},
+        {prompt: "frame", options: answers, horizontal: true},
+        {prompt: "cart", options: answers, horizontal: true},
+        {prompt: "apple", options: answers, horizontal: true},
+        //for list "sleep"
+        {prompt: "sleep", options: answers, horizontal: true},
+        {prompt: "bed", options: answers, horizontal: true},
+        {prompt: "blanket", options: answers, horizontal: true},
+        {prompt: "slumber", options: answers, horizontal: true},
+        {prompt: "nugget", options: answers, horizontal: true},
+        {prompt: "pathway", options: answers, horizontal: true},
+        //for list "smell"
+        {prompt: "nose", options: answers, horizontal: true},
+        {prompt: "whiff", options: answers, horizontal: true},
+        {prompt: "reek", options: answers, horizontal: true},
+        {prompt: "smell", options: answers, horizontal: true},
+        {prompt: "holiday", options: answers, horizontal: true},
+        {prompt: "marathon", options: answers, horizontal: true},
+        //for list "doctor"
+        {prompt: "nurse", options: answers, horizontal: true},
+        {prompt: "doctor", options: answers, horizontal: true},
+        {prompt: "invent", options: answers, horizontal: true},
+        {prompt: "phone", options: answers, horizontal: true},
+        {prompt: "physician", options: answers, horizontal: true},
+        {prompt: "patient", options: answers, horizontal: true},
+        //for list "sweet"
+        {prompt: "sour", options: answers, horizontal: true},
+        {prompt: "tooth", options: answers, horizontal: true},
+        {prompt: "honey", options: answers, horizontal: true},
+        {prompt: "sweet", options: answers, horizontal: true},
+        {prompt: "pipe", options: answers, horizontal: true},
+        {prompt: "elevator", options: answers, horizontal: true},
+        //for word "chair"
+        {prompt: "chair", options: answers, horizontal: true},
+        {prompt: "table", options: answers, horizontal: true},
+        {prompt: "sofa", options: answers, horizontal: true},
+        {prompt: "cushion", options: answers, horizontal: true},
+        {prompt: "bottle", options: answers, horizontal: true},
+        {prompt: "shirt", options: answers, horizontal: true},
+        //for word "smoke"
+        {prompt: "smoke", options: answers, horizontal: true},
+        {prompt: "cigarette", options: answers, horizontal: true},
+        {prompt: "chimney", options: answers, horizontal: true},
+        {prompt: "tobacco", options: answers, horizontal: true},
+        {prompt: "computer", options: answers, horizontal: true},
+        {prompt: "air", options: answers, horizontal: true}
       ]
     };
     timeline.push(test_page);
