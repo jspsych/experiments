@@ -21,16 +21,17 @@
     };
     timeline.push(welcome);
 
-    var instructions = {
+    var training_instructions = {
       type: "html-keyboard-response",
-      stimulus: "<p>In this experiment you'll see lists of words. " +
-      "You'll have to memorize the lists, then later you'll be shown a list of " +
-      "words that may or may not have been in the original lists. Probably " +
-      "your mind will fool you and you'll get some words wrong. This is normal --" +
-      " do not be alarmed.</p>",
+      stimulus: "<p>The goal of this experiment is to emulate the Deese Roediger McDermott paradigm " +
+      "paradigm. for false memories.</p>" +
+      "<p>Starting on the next page, you will be presented with eight consecutive lists. " +
+      "Each list is preceded by a focus cross, and " +
+      "there are 15 words in each list. Try to pay as much attention as you can to the " +
+      "contents of each list. Press any key to continue.</p>",
       post_trial_gap: 1000
     };
-    timeline.push(instructions);
+    timeline.push(training_instructions);
 
 //-----------------------------FIRST LIST---------------------------------------
 // critical word - anger
@@ -393,6 +394,20 @@
     timeline.push(trial_eight_procedure);
 
 //-----------------------------TESTING BLOCK------------------------------------
+
+    var testing_instructions = {
+      type: "html-keyboard-response",
+      stimulus: "<p>Now you will be presented with a list of 42 words, some of which " +
+      "were presented previously in the lists you viewed and others which were not.</p>" +
+      "<p>Your job is to determine whether each word was presented previously. Additionally, " +
+      "if you determine a word was on one of the lists you viewed, you will be asked " +
+      "whether you remember or know the word was on the list.</p>" +
+      "<p>Remember judgments are for words you explicitly remember appearing in the list - that is, " +
+      "words which you can vividly recall being presented. Know judgments are for words which, " +
+      "though you are sure were presented, you do not recollect seeing.</p>",
+      post_trial_gap: 1000
+    };
+    timeline.push(testing_instructions);
 
     // possible answers
     var answers = ["Old", "New", "Remember", "Know"];
