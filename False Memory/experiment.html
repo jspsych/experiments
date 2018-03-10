@@ -425,76 +425,132 @@
 //"norms for word lists that create false memories"
 //http://www.psych.wustl.edu/memory/Roddy%20article%20PDF's/Stadler%20et%20al%20(1999)_MemCog.pdf
 
-//can just make this one huge page of randomized list at the end
-//i could do all this in one day definitely
+/* original set (before randomization)
+[
+  //for list "mad"
+  {prompt: "mad", options: answers, horizontal: true},
+  {prompt: "mail", options: answers, horizontal: true},
+  {prompt: "wrath", options: answers, horizontal: true},
+  {prompt: "field", options: answers, horizontal: true},
+  {prompt: "fight", options: answers, horizontal: true},
+  {prompt: "anger", options: answers, horizontal: true},
+  //for list "window"
+  {prompt: "window", options: answers, horizontal: true},
+  {prompt: "door", options: answers, horizontal: true},
+  {prompt: "open", options: answers, horizontal: true},
+  {prompt: "frame", options: answers, horizontal: true},
+  {prompt: "cart", options: answers, horizontal: true},
+  {prompt: "apple", options: answers, horizontal: true},
+  //for list "sleep"
+  {prompt: "sleep", options: answers, horizontal: true},
+  {prompt: "bed", options: answers, horizontal: true},
+  {prompt: "blanket", options: answers, horizontal: true},
+  {prompt: "slumber", options: answers, horizontal: true},
+  {prompt: "nugget", options: answers, horizontal: true},
+  {prompt: "pathway", options: answers, horizontal: true},
+  //for list "smell"
+  {prompt: "nose", options: answers, horizontal: true},
+  {prompt: "whiff", options: answers, horizontal: true},
+  {prompt: "reek", options: answers, horizontal: true},
+  {prompt: "smell", options: answers, horizontal: true},
+  {prompt: "holiday", options: answers, horizontal: true},
+  {prompt: "marathon", options: answers, horizontal: true},
+  //for list "doctor"
+  {prompt: "nurse", options: answers, horizontal: true},
+  {prompt: "doctor", options: answers, horizontal: true},
+  {prompt: "invent", options: answers, horizontal: true},
+  {prompt: "phone", options: answers, horizontal: true},
+  {prompt: "physician", options: answers, horizontal: true},
+  {prompt: "patient", options: answers, horizontal: true},
+  //for list "sweet"
+  {prompt: "sour", options: answers, horizontal: true},
+  {prompt: "tooth", options: answers, horizontal: true},
+  {prompt: "honey", options: answers, horizontal: true},
+  {prompt: "sweet", options: answers, horizontal: true},
+  {prompt: "pipe", options: answers, horizontal: true},
+  {prompt: "elevator", options: answers, horizontal: true},
+  //for word "chair"
+  {prompt: "chair", options: answers, horizontal: true},
+  {prompt: "table", options: answers, horizontal: true},
+  {prompt: "sofa", options: answers, horizontal: true},
+  {prompt: "cushion", options: answers, horizontal: true},
+  {prompt: "bottle", options: answers, horizontal: true},
+  {prompt: "shirt", options: answers, horizontal: true},
+  //for word "smoke"
+  {prompt: "smoke", options: answers, horizontal: true},
+  {prompt: "cigarette", options: answers, horizontal: true},
+  {prompt: "chimney", options: answers, horizontal: true},
+  {prompt: "tobacco", options: answers, horizontal: true},
+  {prompt: "computer", options: answers, horizontal: true},
+  {prompt: "air", options: answers, horizontal: true}
+]
+*/
 
     var test_page = {
       type: 'survey-multi-select',
       preamble: 'Was the word in any of the studied lists? If yes, do you remember or know so?',
       questions: [
-        //for list "mad"
-        {prompt: "mad", options: answers, horizontal: true},
-        {prompt: "mail", options: answers, horizontal: true},
-        {prompt: "wrath", options: answers, horizontal: true},
-        {prompt: "field", options: answers, horizontal: true},
-        {prompt: "fight", options: answers, horizontal: true},
-        {prompt: "anger", options: answers, horizontal: true},
-        //for list "window"
-        {prompt: "window", options: answers, horizontal: true},
-        {prompt: "door", options: answers, horizontal: true},
-        {prompt: "open", options: answers, horizontal: true},
-        {prompt: "frame", options: answers, horizontal: true},
-        {prompt: "cart", options: answers, horizontal: true},
-        {prompt: "apple", options: answers, horizontal: true},
-        //for list "sleep"
-        {prompt: "sleep", options: answers, horizontal: true},
-        {prompt: "bed", options: answers, horizontal: true},
-        {prompt: "blanket", options: answers, horizontal: true},
-        {prompt: "slumber", options: answers, horizontal: true},
-        {prompt: "nugget", options: answers, horizontal: true},
-        {prompt: "pathway", options: answers, horizontal: true},
-        //for list "smell"
-        {prompt: "nose", options: answers, horizontal: true},
-        {prompt: "whiff", options: answers, horizontal: true},
-        {prompt: "reek", options: answers, horizontal: true},
-        {prompt: "smell", options: answers, horizontal: true},
-        {prompt: "holiday", options: answers, horizontal: true},
-        {prompt: "marathon", options: answers, horizontal: true},
-        //for list "doctor"
-        {prompt: "nurse", options: answers, horizontal: true},
-        {prompt: "doctor", options: answers, horizontal: true},
-        {prompt: "invent", options: answers, horizontal: true},
-        {prompt: "phone", options: answers, horizontal: true},
-        {prompt: "physician", options: answers, horizontal: true},
-        {prompt: "patient", options: answers, horizontal: true},
-        //for list "sweet"
-        {prompt: "sour", options: answers, horizontal: true},
-        {prompt: "tooth", options: answers, horizontal: true},
-        {prompt: "honey", options: answers, horizontal: true},
-        {prompt: "sweet", options: answers, horizontal: true},
-        {prompt: "pipe", options: answers, horizontal: true},
-        {prompt: "elevator", options: answers, horizontal: true},
-        //for word "chair"
-        {prompt: "chair", options: answers, horizontal: true},
-        {prompt: "table", options: answers, horizontal: true},
-        {prompt: "sofa", options: answers, horizontal: true},
-        {prompt: "cushion", options: answers, horizontal: true},
-        {prompt: "bottle", options: answers, horizontal: true},
-        {prompt: "shirt", options: answers, horizontal: true},
-        //for word "smoke"
-        {prompt: "smoke", options: answers, horizontal: true},
-        {prompt: "cigarette", options: answers, horizontal: true},
-        {prompt: "chimney", options: answers, horizontal: true},
-        {prompt: "tobacco", options: answers, horizontal: true},
-        {prompt: "computer", options: answers, horizontal: true},
-        {prompt: "air", options: answers, horizontal: true}
+        { prompt: 'chimney', options: answers, horizontal: true },
+        { prompt: 'sofa', options: answers, horizontal: true },
+        { prompt: 'chair', options: answers, horizontal: true },
+        { prompt: 'cigarette', options: answers, horizontal: true },
+        { prompt: 'pathway', options: answers, horizontal: true },
+        { prompt: 'invent', options: answers, horizontal: true },
+        { prompt: 'apple', options: answers, horizontal: true },
+        { prompt: 'tobacco', options: answers, horizontal: true },
+        { prompt: 'smoke', options: answers, horizontal: true },
+        { prompt: 'patient', options: answers, horizontal: true },
+        { prompt: 'shirt', options: answers, horizontal: true },
+        { prompt: 'blanket', options: answers, horizontal: true },
+        { prompt: 'honey', options: answers, horizontal: true },
+        { prompt: 'frame', options: answers, horizontal: true },
+        { prompt: 'smell', options: answers, horizontal: true },
+        { prompt: 'pipe', options: answers, horizontal: true },
+        { prompt: 'window', options: answers, horizontal: true },
+        { prompt: 'wrath', options: answers, horizontal: true },
+        { prompt: 'sleep', options: answers, horizontal: true },
+        { prompt: 'air', options: answers, horizontal: true },
+        { prompt: 'sweet', options: answers, horizontal: true },
+        { prompt: 'phone', options: answers, horizontal: true },
+        { prompt: 'physician', options: answers, horizontal: true },
+        { prompt: 'mad', options: answers, horizontal: true },
+        { prompt: 'cushion', options: answers, horizontal: true },
+        { prompt: 'reek', options: answers, horizontal: true },
+        { prompt: 'bottle', options: answers, horizontal: true },
+        { prompt: 'mail', options: answers, horizontal: true },
+        { prompt: 'nurse', options: answers, horizontal: true },
+        { prompt: 'computer', options: answers, horizontal: true },
+        { prompt: 'holiday', options: answers, horizontal: true },
+        { prompt: 'doctor', options: answers, horizontal: true },
+        { prompt: 'field', options: answers, horizontal: true },
+        { prompt: 'sour', options: answers, horizontal: true },
+        { prompt: 'nugget', options: answers, horizontal: true },
+        { prompt: 'whiff', options: answers, horizontal: true },
+        { prompt: 'marathon', options: answers, horizontal: true },
+        { prompt: 'anger', options: answers, horizontal: true },
+        { prompt: 'nose', options: answers, horizontal: true },
+        { prompt: 'table', options: answers, horizontal: true },
+        { prompt: 'cart', options: answers, horizontal: true },
+        { prompt: 'bed', options: answers, horizontal: true },
+        { prompt: 'open', options: answers, horizontal: true },
+        { prompt: 'door', options: answers, horizontal: true },
+        { prompt: 'elevator', options: answers, horizontal: true },
+        { prompt: 'tooth', options: answers, horizontal: true },
+        { prompt: 'slumber', options: answers, horizontal: true },
+        { prompt: 'fight', options: answers, horizontal: true }
       ]
     };
     timeline.push(test_page);
 
     var debrief = {
       type: "html-keyboard-response",
-      stimulus: "<p>thats it</p>",
+      stimulus: "<p>The purpose of this experiment was to simulate the Deese Roediger McDermott " +
+      "paradigm, related to false memories. Each list you saw was specifically constructed " +
+      "so as to elicit a critical word not actually present in the list (e.g. the first list " +
+      "with items fury, anger, etc. was designed to elicit the critical word mad). In Roediger and McDermott's " +
+      "experiment there was also a distinction made between remembering and knowing - Roediger and McDermott " +
+      "hypothesized that participants would, when marking the critical word as old, judge " +
+      "the critical word as known rather than remembered. </p>",
       post_trial_gap: 2000
     };
     timeline.push(debrief);
